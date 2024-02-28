@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+    <!-- <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style2.css"> -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer"
+    />
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        img {
+            width: 40px;
+            height: 50px;
+        }
+        
+        ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        ul li a {
+            display: block;
+            position: relative;
+            width: 50px;
+            height: 50px;
+            line-height: 50px;
+            font-size: 20px;
+            text-align: center;
+            text-decoration: none;
+            color: #262626;
+            margin: 0 10px;
+            transition: 0.5s;
+        }
+        
+        ul li a span {
+            position: absolute;
+            transition: transform 0.5s;
+        }
+        
+        ul li a span:nth-child(1),
+        ul li a span:nth-child(3) {
+            width: 100%;
+            height: 2px;
+            background: #262626;
+        }
+        
+        ul li a span:nth-child(1) {
+            top: 0;
+            left: 0;
+            transform-origin: right;
+        }
+        
+        ul li a:hover span:nth-child(1) {
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.5s;
+        }
+        
+        ul li a span:nth-child(3) {
+            bottom: 0;
+            left: 0;
+            transform-origin: left;
+        }
+        
+        ul li a:hover span:nth-child(3) {
+            transform: scaleX(0);
+            transform-origin: right;
+            transition: transform 0.5s;
+        }
+        /*###########################################################*/
+        
+        ul li a span:nth-child(2),
+        ul li a span:nth-child(4) {
+            width: 2px;
+            height: 100%;
+            background: #262626;
+        }
+        
+        ul li a span:nth-child(2) {
+            top: 0;
+            left: 0;
+            transform: scaleX(0);
+            transform-origin: bottom;
+        }
+        
+        ul li a:hover span:nth-child(2) {
+            transform: scaleX(1);
+            transform-origin: top;
+            transition: transform 0.5s;
+        }
+        
+        ul li a span:nth-child(4) {
+            top: 0;
+            right: 0;
+            transform: scaleY(0);
+            transform-origin: top;
+        }
+        
+        ul li a:hover span:nth-child(4) {
+            transform: scaleY(1);
+            transform-origin: bottom;
+            transition: transform 0.5s;
+        }
+        
+        body {
+            background-color: rgba(10, 10, 10, 0.767);
+            position: relative;
+            font-family: sans-serif;
+        }
+        
+        table {
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        table {
+            background-color: rgba(39, 37, 37, 0.411);
+            border-radius: 25px;
+            position: absolute;
+            margin-top: 330px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #btn {
+            background-color: #FF5A00;
+            color: #fff;
+            height: 35px;
+            width: 100px;
+            border: none;
+            border-radius: 18px;
+            letter-spacing: 1px;
+            margin-top: 12px;
+        }
+        
+        #btn:hover {
+            letter-spacing: 0.6px;
+            width: 70px;
+            cursor: pointer;
+            color: #FF5A00;
+            background-color: #fff;
+            border: 1px solid #FF5A00;
+            font-weight: 600;
+        }
+        
+        #bc {
+            font-size: small;
+        }
+        
+        #bcc {
+            font-size: large;
+            font-weight: 400;
+        }
+        
+        #bccc {
+            font-size: xx-small;
+        }
+        
+        .error {
+            color: red;
+            margin: 0px;
+            text-align: left;
+        }
+    </style>
+</head>
+
+<body>
+    <form action="newforma.php" autocomplete="off" method="post">
+        <table align="center" cellspacing="15">
+            <tr>
+                <td colspan="10" align="center" id="bcc">Please Sign up !</td>
+            </tr>
+            <tr>
+                <td>First Name </td>
+                <td><input type="text" placeholder="First Name" name="firstname" id="firstName" required size="20">
+                    <p id="firstNamee" class="error"></p>
+                </td>
+            </tr>
+            <tr>
+                <td>Last Name</td>
+                <td><input type="text" placeholder="Last Name" id="lastName" name="lastname" required size="20"><span id="lastNamee" class="error"></span></td>
+            </tr>
+            <tr>
+                <td>Email Address</td>
+                <td><input type="email" placeholder="Email" id="email" name="email" size="20"><span id="emaill" class="error"></span></td>
+            </tr>
+            <tr>
+                <td>Password</td>
+                <td> <input type="password" placeholder="Password" id="password" name="password" size="20"><span id="passwordd" class="error"></span></td>
+            </tr>
+
+            <tr>
+                <td align="center" colspan="2"><input type="submit" id="btn" name="save"></td>
+            </tr>
+            <tr>
+                <td align="center" colspan="10" id="bc">or continue with</td>
+            </tr>
+            <tr>
+                <td colspan="10">
+                    <ul>
+                        <li>
+                            <a href="https://www.twitter.com">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <img src="./img/twitter.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.instagram.com">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <img src="./img/instagram.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <img src="./img/facebook.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.google.com">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <img src="./img/google.png">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="https://www.linkedin.com">
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <span></span>
+                                <img src="./img/linkedin.png">
+                            </a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td id="bccc" colspan="10" align="center">You are consenting to our privacy policy and signing up to receive emails.</td>
+            </tr>
+    </form>
+    </table>
+
+
+
+</body>
+
+</html>
